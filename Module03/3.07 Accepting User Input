@@ -1,0 +1,78 @@
+/**
+ * The purpose of this program is to calculate the total points
+ * and average grade in a class based on user input.
+ * 
+ * @author 
+ * @version 09/25/18
+ */
+import java.util.Scanner;
+public class GradesV3
+{
+    public static void main(String[ ] args)
+    {
+        //declare local variables
+        int numTests = 0;
+        int totalPoints = 0;
+        double average = 0.0;
+        
+        //scanner in
+        Scanner in;
+        in = new Scanner(System.in);
+
+        //enter name
+        System.out.println("Please enter your name (First Last): ");
+        String firstName = in.next();
+        String lastName = in.nextLine();
+        System.out.println();
+        
+        //enter age in years
+        System.out.println("Please enter your age in years: ");
+        int ageInYears = in.nextInt();
+        System.out.println();
+      
+        //enter date
+        System.out.println("Please enter today's date (Month Date Year): ");
+        String month = in.next();
+        String dateAndYear = in.nextLine();
+        System.out.println();
+        
+        //enter subject
+        System.out.println("Please specify the subject of your class: ");
+        String firstNameOfClass = in.next();
+        String remainingNamesOfClass = in.nextLine();
+        System.out.println();
+        
+        //enter test score #1
+        numTests++;
+        System.out.println("Enter your score from Test #1: ");
+        int testScore1 = in.nextInt();
+        totalPoints += testScore1;
+        System.out.println();
+        
+        //enter test score #2
+        numTests++;
+        System.out.println("Enter your score from Test #2: ");
+        int testScore2 = in.nextInt();
+        totalPoints += testScore2;
+        System.out.println();
+        
+        //enter test score #3
+        numTests++;
+        System.out.println("Enter your score from Test #3: ");
+        int testScore3 = in.nextInt();
+        totalPoints += testScore3;
+        System.out.println();
+        
+        //calculations
+        average = ((double)totalPoints/(double)numTests);
+        System.out.print("Test #1: " + testScore1);
+        System.out.print("  Test #2: " + testScore2);
+        System.out.println("  Test #3: " + testScore3);       
+        System.out.print("Total Number of Points: ");
+        System.out.println(totalPoints);
+        System.out.print("Average Score: ");
+        System.out.println(average);
+        System.out.println();
+
+    }//end of main method
+}//end of class
