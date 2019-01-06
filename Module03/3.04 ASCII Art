@@ -1,0 +1,73 @@
+
+/**
+ * This program uses keyboard characters to create an image
+ * of a GameBoy Color with ASCII art.
+ *
+ * @author
+ * @version 09/21/18
+ */
+public class ArtWork
+{
+     public static void main(String[ ] args)
+    {
+        //local variables
+        String row01 = " __________________________\n";
+        String row02 = "|OFFo oON                  |\n";
+        String row03 = "| .----------------------. |\n";
+        String row04 = "| |  .----------------.  | |\n";
+        String row05 = "| |  |                |  | |\n";
+        String row06 = "| |))|                |  | |\n";
+        String row07 = "| |  |                |  | |\n";
+        String row08 = "| |  |                |  | |\n";
+        String row09 = "| |  |                |  | |\n";
+        String row10 = "| |  |                |  | |\n";
+        String row11 = "| |  |                |  | |\n";
+        String row12 = "| |  '----------------'  | |\n";
+        String row13 = "| |____GAME BOY COLOR____/ |\n";
+        String row14 = "|         ________         |\n";
+        String row15 = "|   _    (Nintendo)        |\n";
+        String row16 = "| _| |_   ''''''''   .-.   |\n";
+        String row17 = "||_ O _|       .-.  ( A )  |\n";
+        String row18 = "|  |_|        ( B )  '-'   |\n";
+        String row19 = "|              '-'         |\n";
+        String row20 = "|                          |\n";
+        String row21 = "|        ___   ___         |\n";
+        String row22 = "|       (___) (___)   ,.,  |\n";
+        String row23 = "|      select start  ;:;:  |\n";
+        String row24 = "|                   ,;:;'  /\n";
+        String row25 = "|                  ,:;:;'.'\n";
+        String row26 = "'-----------------------'\n";
+        
+        String row27 = "                              ";
+        
+        //print ASCII art
+        System.out.print(row01); 
+        System.out.print(row02);
+        System.out.print(row03);
+        System.out.print(row04);
+        System.out.print(row05);
+        System.out.print(row06);
+        System.out.print(row07);
+        System.out.print(row08);
+        System.out.print(row09);
+        System.out.print(row10);
+        System.out.print(row11);
+        System.out.print(row12);
+        System.out.print(row13);
+        System.out.print(row14);
+        System.out.print(row15);
+        System.out.print(row16);
+        System.out.print(row17);
+        System.out.print(row18);
+        System.out.print(row19);
+        System.out.print(row20);
+        System.out.print(row21);
+        System.out.print(row22);
+        System.out.print(row23);
+        System.out.print(row24);
+        System.out.print(row25);
+        System.out.print(row26);
+        System.out.print(row27);
+  
+    }//end of main method
+}//end of class
