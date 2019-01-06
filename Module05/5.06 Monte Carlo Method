@@ -1,0 +1,79 @@
+
+/**
+ * This Monte Carlo Method program tests for the number of deer you will
+ * see before seeing a buck in my backyard.
+ *
+ * @author 
+ * @version 10/25/18
+ */
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.File;
+import java.util.Scanner;
+import java.util.Random;
+public class AnimalPopulation
+{
+    public static void main(String[] args) throws IOException
+    { 
+        //variables and objects
+        PrintWriter outFile = new PrintWriter(new File("data.txt"));
+        Scanner in = new Scanner(System.in);
+        Random randNum = new Random();
+        
+        int numDeer = 0;
+        int bucks = 0;
+        int totalDeer = 0;        
+        int trials;
+        
+        //user prompt for trials
+        System.out.println("Welcome to the Buck Simulator!");
+        System.out.println();
+        System.out.println("How many trials should be simulated?");
+        System.out.println("Enter a number greater than or equal to 1000:" );
+        trials = in.nextInt();
+        
+        //loop to confirm more than 1000 trials
+        if(trials < 1000)
+            System.out.println("\tERROR. Please enter a number greater than or equal to 1000.");
+        else if(trials >= 1000)
+        {
+            System.out.println("\tSIMULATING RESULTS!");
+            System.out.println();
+        
+        //for loop to write data to file
+        for(int i = 1; i <= trials; i++)
+        {
+            numDeer = randNum.nextInt(7);
+            while(numDeer != 0)
+            {
+                numDeer = randNum.nextInt(7);
+                totalDeer++;
+            }
+            if(numDeer == 0)
+            {
+                totalDeer++;
+                bucks++;
+            }
+        }
+        }
+        
+        //calculations
+        outFile.println("The number of deer recorded was: " + totalDeer);
+        outFile.println("The number of bucks recorded was: " + bucks);
+        double averageNumberOfDeer = ((double)totalDeer / (double)bucks);
+        outFile.println("The average number of deer seen before seeing a buck in my backyard: " + averageNumberOfDeer);
+        
+        //close output file
+        outFile.close();
+        
+        Scanner inputFile = new Scanner(new File("data.txt"));
+        while(inputFile.hasNextLine())
+        {
+            String token = inputFile.nextLine();
+            System.out.println(token);       
+        }
+        
+        //close input stream
+        inputFile.close();
+    }
+}
