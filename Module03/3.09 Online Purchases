@@ -1,0 +1,105 @@
+
+/**
+ * The purpose of this program is to simulate an online purchase
+ * by asking user for input and displaying an e-receipt.
+ *
+ * @author 
+ * @version 09/26/18
+ */
+import java.util.Scanner;         //import Scanner methods
+public class BuyPizza
+{
+    public static void main(String[ ] args)
+    {
+      //construct scanner object called in
+      Scanner in = new Scanner(System.in);
+      
+      // declare variables
+      int totalPizzas;
+      int totalBreadsticks;
+      int totalTwoLiters;
+      int month;
+      int day;
+      int year;
+      int pinNumber;
+      
+      //greeting
+      System.out.println("Hello, and welcome to Little Caesars!");
+      
+      //enter name
+      System.out.print("Please enter your name (First Last): ");
+      String firstName = in.next();
+      String lastName = in.nextLine();
+      
+      //enter date
+      System.out.print("Enter today's date (mm/dd/yyyy): ");
+      String date = in.next();
+      month = Integer.parseInt(date.substring(0,2));
+      day = Integer.parseInt(date.substring(3,5));
+      year = Integer.parseInt(date.substring(6,10));
+      
+      //order pizza
+      System.out.print("How many Hot-N-Ready's ($5) would you like? ");
+      String userPizzas = in.next();
+      totalPizzas = Integer.parseInt(userPizzas);
+      
+      //order breadsticks
+      System.out.print("How many orders of breadsticks ($3) would you like? ");
+      String userBreadsticks = in.next();
+      totalBreadsticks = Integer.parseInt(userBreadsticks);
+      
+      //order two liters
+      System.out.print("How many 2 liters ($2) would you like? ");
+      String userTwoLiters = in.next();
+      totalTwoLiters = Integer.parseInt(userTwoLiters);
+      
+      //enter card number
+      System.out.print("Enter your debit card number (####-####-####-####): ");
+      String debitCardNumber = in.next();
+      
+      //enter pin number
+      System.out.print("Enter your 4-digit PIN number (####): ");
+      String displayPinNumber = in.next();
+      pinNumber = Integer.parseInt(displayPinNumber);
+      System.out.println();
+
+      //calculations
+      int priceOfPizzaOrder = totalPizzas * 5;                         //price of all pizzas
+      int priceOfBreadstickOrder = totalBreadsticks * 3;               //price of all breadsticks
+      int priceOfTwoLiterOrder = totalTwoLiters * 2;                   //price of all two liters
+      double totalPrice = (priceOfPizzaOrder + priceOfBreadstickOrder + priceOfTwoLiterOrder);   //price of everything
+      
+      String lastFourDigits = debitCardNumber.substring(15,19);
+      String firstInitial = firstName.substring(0,1);
+      String secondInitial = firstName.substring(1,2);
+      String name = firstInitial + "." + lastName;
+      String orderNumber = firstInitial + secondInitial + pinNumber;
+           
+      //receipt      
+      System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+      System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+      System.out.println("Your e-Receipt");
+      System.out.println();
+      System.out.println(month + "-" + day + "-" + year);
+      System.out.println("Order number: " + orderNumber);
+      System.out.println();
+      System.out.println("\t" + name);
+      System.out.print("\tAccount: ");
+      System.out.println("####-####-####-" + lastFourDigits);
+      System.out.print("\tNumber of Pizzas: ");
+      System.out.println(totalPizzas);
+      System.out.print("\tNumber of Breadstick Orders: ");
+      System.out.println(totalBreadsticks);
+      System.out.print("\tNumber of Two Liters: ");
+      System.out.println(totalTwoLiters);
+      System.out.print("\tTotal Price: $");
+      System.out.println(totalPrice);
+      System.out.println();
+      System.out.println("\t$" + totalPrice + " will be charged to your account.");
+      System.out.println();
+      System.out.println("\tThank you for choosing Little Caesars.");
+      System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+      System.out.println("-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*");
+      System.out.println();
+    }
+}
