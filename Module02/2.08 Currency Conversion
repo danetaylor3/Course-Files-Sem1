@@ -1,0 +1,126 @@
+/**
+ * The Currency class converts an amount of money from a specific
+ * country into the equivalent currency of another country given 
+ * the current exchange rate.
+ *
+ * @author 
+ * @version 09/13/18
+ */
+public class CurrencyV1
+{
+    public static void main(String [ ] args)
+    {
+        //Declare and initialize local variables
+        double startingUsDollars = 6500.00;     // starting US Dollars
+
+        double yuanSpent = 6183.5526;           // Chinese yuan spent
+        double yuanExchangeRate = 6.870614;     // 1 US dollar = 6.870614 Yuan
+        double dollarsSpentInChina = 0.0;       // US dollars spent in China
+        double dollarsAfterChina = 0.0;         // US dollars remaining after China
+        
+        double eurosSpent = 950.0667;           // Euros spent
+        double euroExchangeRate = 0.863697;     // 1 US dollar = 0.863697 Euros
+        double dollarsSpentInFrance = 0.0;      // US dollars spent in France
+        double dollarsAfterFrance = 0.0;        // US dollars remaining after France
+
+        double pesosSpent = 113768.49;          // Argentinian pesos spent
+        double pesoExchangeRate = 37.92283;     // 1 US dollar = 37.92283 Pesos
+        double dollarsSpentInArgentina = 0.0;   // US dollars spent in Argentina
+        double dollarsAfterArgentina = 0.0;     // US dollars remaining after Argentina
+        
+        // Message to user stating purpose
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("This program converts an amount of money");
+        System.out.println("from a specific country into the equivalent");
+        System.out.println("currency of another country given the current");
+        System.out.println("exchange rate.");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println();
+
+        // Starting point and Conversion for China
+        dollarsSpentInChina = (yuanSpent/yuanExchangeRate);
+        dollarsAfterChina = (startingUsDollars-dollarsSpentInChina);
+        System.out.print("Starting US dollars:            ");
+        System.out.println(startingUsDollars);
+        System.out.println();
+        System.out.println("China:");
+        System.out.print(" Yuan spent:                    ");
+        System.out.println(yuanSpent);
+        System.out.print(" US dollars equivalent:         ");
+        System.out.println(dollarsSpentInChina);
+        System.out.print(" US dollars remaining:          ");
+        System.out.println(dollarsAfterChina);
+        System.out.println();
+        
+        //Conversion for France
+        dollarsSpentInFrance = (eurosSpent/euroExchangeRate);
+        dollarsAfterFrance = (dollarsAfterChina-dollarsSpentInFrance);
+        System.out.println("France:");
+        System.out.print(" Euros spent:                   ");
+        System.out.println(eurosSpent);
+        System.out.print(" US dollars equivalent:         ");
+        System.out.println(dollarsSpentInFrance);
+        System.out.print(" US dollars remaining:          ");
+        System.out.println(dollarsAfterFrance);
+        System.out.println();
+        
+        //Conversion for Argentina
+        dollarsSpentInArgentina = (pesosSpent/pesoExchangeRate);
+        dollarsAfterArgentina = (dollarsAfterFrance-dollarsSpentInArgentina);
+        System.out.println("Argentina:");
+        System.out.print(" Pesos spent:                   ");
+        System.out.println(pesosSpent);
+        System.out.print(" US dollars equivalent:         ");
+        System.out.println(dollarsSpentInArgentina);
+        System.out.print(" US dollars remaining:          ");
+        System.out.println(dollarsAfterArgentina);
+        
+        //Total balance
+        System.out.println("==================================================");
+        System.out.println("Remaining US dollars: " + dollarsAfterArgentina);
+        System.out.println();
+        System.out.println();
+        
+        //Souvenir Purchases
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("Souvenir Purchases");
+        System.out.println(" (all values in US Dollars) ");
+        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+
+        //Calculations for Souvenir #1
+        int costItem1 = 12;                //cost per item of first souvenir
+        int budget1 = 100;                 //budget for first item
+        int totalItems1 = 0;               //how many items can be purchased
+        int fundsRemaining1 = 0;           //how much of the budget is left
+
+        totalItems1 = (budget1/costItem1);
+        fundsRemaining1 = (budget1%costItem1);
+        System.out.println("Item 1");
+        System.out.println("   Cost per item: $" + costItem1 );
+        System.out.println("   Budget: $"+ budget1);
+        System.out.print("   Total items purchased: ");
+        System.out.println(totalItems1);
+        System.out.print("   Funds remaining: $");
+        System.out.println(fundsRemaining1);
+        System.out.println();
+
+        //Calculations for Souvenir #2
+        double costItem2 = 29.99;         //cost per item of second souvenir
+        int budget2 = 500;                //budget for second item
+        int totalItems2 = 0;              //how many items can be purchased
+        double fundsRemaining2 = 0.0;     //how much of the budget is left
+
+        totalItems2 = (int)(budget2/costItem2);
+        fundsRemaining2 = (budget2%costItem2);
+        System.out.println("Item 2");
+        System.out.println("   Cost per item: $" + costItem2 );
+        System.out.println("   Budget: $"+ budget2);
+        System.out.print("   Total items purchased: ");
+        System.out.println(totalItems2);
+        System.out.print("   Funds remaining: $");
+        System.out.println(fundsRemaining2);
+        System.out.println();
+        
+    } // end of main method
+} // end of class
+
