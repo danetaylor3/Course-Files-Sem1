@@ -1,0 +1,64 @@
+
+/**
+ * Purpose: Display student's personal and contact information on screen.
+ *
+ * @author 
+ * @version August 28, 2018
+ */
+public class StudentInfoCard
+{
+    public static void main(String[] args)
+    {
+        System.out.print("*********************************************************************************");
+        System.out.println();
+        System.out.print("*                                                                               *");
+        System.out.println();
+        System.out.print("*                             Student Information                               *");
+        System.out.println();
+        System.out.print("*                                                                               *");
+        System.out.println();
+        System.out.print("*********************************************************************************");
+        System.out.println();
+        System.out.print("Name: First Last");   
+        System.out.print("   Birthday: Month Day, Year");
+        System.out.println();
+        System.out.print("Grade:");
+        System.out.print("   Age:");
+        System.out.println();
+        System.out.println();
+        System.out.print("City:");
+        System.out.print("   School:");
+        System.out.println();
+        System.out.println();
+        System.out.print("Home Phone:");
+        System.out.print("   Available:");
+        System.out.println();
+        System.out.print("Cell Phone:");
+        System.out.print("   Available:");
+        System.out.println();
+        System.out.print("Email:");
+        System.out.println();
+        System.out.println();
+        System.out.print("Mom's/Emergency contact information");
+        System.out.println();
+        System.out.print("Cell Phone:");
+        System.out.print("   Available:");
+        System.out.println();
+        System.out.print("Email:");
+        System.out.println();
+        System.out.println();
+        System.out.print("Current Math Class:");
+        System.out.println();
+        System.out.print("Programming Experience:");
+        System.out.println();
+        System.out.print("");
+        System.out.println();
+        System.out.println();
+        System.out.print("");
+        System.out.println();
+        System.out.print("");
+        System.out.println();
+        System.out.print("");
+        System.out.println();
+    }//end of main method
+}//end of class
