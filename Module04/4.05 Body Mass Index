@@ -1,0 +1,63 @@
+
+/**
+ * This program calculates Body Mass Index based on the user's
+ * input of height and weight.
+ * 
+ * @author 
+ * @version 10/8/18
+ */
+import java.util.Scanner;
+public class BMI
+{
+    public static void main(String[] args)
+    {
+        //scanner in
+        Scanner in = new Scanner(System.in);
+        
+        //user input
+        System.out.println("Enter your name (first last): ");
+        String firstName = in.next();
+        String lastName = in.nextLine();
+        String name = firstName + lastName;
+        
+        System.out.println("Enter your weight in pounds (e.g. 150): ");
+        String weightString = in.next();
+        
+        System.out.println("Enter your height in feet and inches (e.g. 5 10): ");
+        int heightFeet = in.nextInt();
+        int heightIn = in.nextInt();
+        
+        //parse numeric input
+        int weightLbs = Integer.parseInt(weightString);
+        
+        //convert height and weight
+        int heightInInches = ((heightFeet * 12) + heightIn);
+        double weightInKg = (0.45359237 * weightLbs);
+        double heightInMeters = (0.0254 * heightInInches);
+        
+        //BMI formula
+        double BMI = ((weightInKg)/(heightInMeters * heightInMeters));
+                
+        //determine BMI status
+        String category;
+        if ( BMI < 18.5 )
+          category = "Underweight";
+        else if ( BMI <= 24.9 )
+          category = "Normal or Healthy Weight";
+        else if ( BMI <= 29.9 )
+          category = "Overweight";
+        else 
+          category = "Obese";
+        
+        //calculator
+        System.out.println();
+        System.out.println("Body Mass Index Calculator");
+        System.out.println("==========================");
+        System.out.println("Name: " + name);
+        System.out.println("Height (m): " + heightInMeters);
+        System.out.println("Weight (kg): " + weightInKg);
+        System.out.println("BMI: " + BMI);
+        System.out.println("Category: " + category);
+ 
+    }
+}
