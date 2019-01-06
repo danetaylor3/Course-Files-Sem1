@@ -1,0 +1,64 @@
+/**
+ * This program calculates the average temperature and total rainfall
+ * in Key West, Florida for a single year.
+ * 
+ * @author 
+ * @version 11/01/18
+ *
+ */
+import java.util.Scanner;
+public class AnnualWeatherV1
+{
+    public static void main (String [ ] args)
+    {
+
+        //Declare and initialize variables
+        Scanner in = new Scanner(System.in);
+        String city = "Key West";
+        String state = "Florida";
+  
+        String [] month = { "Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sep", "Oct", "Nov", "Dec" };
+        double [] temperature ={ 70.3, 70.8, 73.8, 77.0, 80.7, 83.4, 84.5, 84.4, 83.4, 80.2, 76.3, 72.0 };     //initialize with Fahrenheit values
+        double [] precipitation ={ 2.2, 1.5, 1.9, 2.1, 3.5, 4.6, 3.3, 5.4, 5.5, 4.3, 2.6, 2.1 };      //initialize with inch values
+    
+        String tempLabel = "F";    //initialize to F
+        String precipLabel = "in."; //initialize to in
+    
+        double average;
+        double sumAverage = 0;
+        double total = 0;
+        
+        //Processing - calculate average temperature and total precipitation
+        for( int index = 0; index < temperature.length; index++)
+        {
+            sumAverage += temperature[index];
+        }
+        average = sumAverage/temperature.length;
+        average = (int)(average * 10) / 10.0;
+        for (int index = 0; index < precipitation.length; index++)
+        {
+            total += precipitation[index];
+        }
+        total = (int)(total * 10) / 10.0;
+        
+    
+        //Output: display table of weather data including average and total
+        System.out.println();
+        System.out.println("           Weather Data");
+        System.out.println("      Location: " + city +", " + state);
+        System.out.println("Month     Temperature (" +  tempLabel + ")     Precipitation (" + precipLabel + ")");
+        System.out.println("***************************************************");
+        
+        for( int i = 0; i < temperature.length && i < precipitation.length; i++)
+        {
+            System.out.print(month[i]);
+            System.out.print("\t\t" + temperature[i]);
+            System.out.print("\t\t\t" + precipitation[i]);
+            System.out.println();
+        }
+        
+        System.out.println("***************************************************");
+        System.out.println("\tAverage: " + average + "    \tTotal: " + total);
+        
+    }//end main
+}//end class
